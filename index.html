@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIT | Bindhu Institute of Technology — Multi-Campus Innovation & Engineering</title>
+  <meta name="description" content="Bindhu Institute of Technology (BIT) is a premier autonomous institution across Bengaluru, Hyderabad, Chennai, and Pune. Explore our B.Tech degrees, transparent fee calculator, 100% scholarships, and chat with our student ambassador." />
+  <meta name="keywords" content="BIT, Bindhu Institute of Technology, Engineering College, B.Tech, Computer Science AI, Bengaluru, Hyderabad, Chennai, Pune, Placements, Scholarships, Admissions" />
+  <meta property="og:title" content="BIT | Bindhu Institute of Technology" />
+  <meta property="og:description" content="Explore India's premier multi-campus technology institute. Select your campus, calculate scholarships, and chat live with student counselors." />
+  <meta property="og:image" content="assets/campus-bengaluru.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon / Logo -->
+  <link rel="icon" type="image/jpeg" href="assets/bit-logo.jpg" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-notice-bar" role="complementary" aria-label="Campus Announcements">
+    <div class="top-notice-content">
+      <span class="top-notice-pill">Admissions 2026</span>
+      <span>📢 Walk-in Counseling & BSAT Scholarship Registrations Open across all 4 Campuses!</span>
+      <span>•</span>
+      <span>Helpline: <a href="tel:18004252463" class="top-helpline-link">1800-425-BINDHU (2463)</a></span>
+    </div>
+  </div>
+
+  <!-- Site Header & Global Navigation -->
+  <header class="site-header" id="main-header">
+    <div class="container nav-wrap">
+      <!-- University Brand Crest & Title -->
+      <a href="#hero" class="brand-link" id="brand-home-link" aria-label="Bindhu Institute of Technology Home">
+        <img src="assets/bit-logo.jpg" alt="BIT Official Crest" class="brand-crest" />
+        <div class="brand-text">
+          <span class="brand-name">BIT <span class="hand-sticker" style="font-size: 1.15rem; color: var(--primary);">Est. 1998</span></span>
+          <span class="brand-tag">Bindhu Institute of Technology</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#campus-showcase-panel" class="nav-link">📍 Campuses</a></li>
+          <li><a href="#programs-section" class="nav-link">🎓 Degrees</a></li>
+          <li><a href="#ask-bit-section" class="nav-link">💬 Student Helpdesk</a></li>
+          <li><a href="#scholarship-section" class="nav-link">💰 Fee & Waivers</a></li>
+          <li><a href="#student-life-section" class="nav-link">🎉 Campus Pulse</a></li>
+        </ul>
+      </nav>
+
+      <!-- Global Actions: Campus Dropdown & Tour Booking -->
+      <div class="nav-actions">
+        <!-- Campus Selector Dropdown -->
+        <div class="header-campus-picker" title="Quick Select Active Campus">
+          <span style="font-size: 1rem;">📍</span>
+          <select id="header-campus-select" aria-label="Select Campus Location">
+            <option value="bengaluru">Bengaluru (AI Hub)</option>
+            <option value="hyderabad">Hyderabad (FinTech & Cloud)</option>
+            <option value="chennai">Chennai (EV & Marine)</option>
+            <option value="pune">Pune (Formula Racing & Mechatronics)</option>
+          </select>
+        </div>
+
+        <!-- Schedule Visit Button -->
+        <button class="btn-primary btn-open-tour-modal" id="btn-header-tour" aria-haspopup="dialog">
+          <span>Book Visit</span> ➔
+        </button>
+
+        <!-- Theme Toggle -->
+        <button class="theme-toggle-btn" id="header-theme-toggle" aria-label="Toggle Dark and Light Mode" title="Toggle Theme">
+          <span class="theme-toggle-icon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         Hero Section with Interactive Campus Switcher
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <!-- Live Status Pill -->
+        <div class="hero-pill-badge" id="hero-campus-badge">
+          📍 Exploring: <strong>Bengaluru Campus</strong> • AI & Innovation Flagship
+        </div>
+
+        <div class="hero-grid">
+          <!-- Left Column: Copy & Interactive Tabs -->
+          <div class="hero-content">
+            <span class="hand-sticker" style="margin-bottom: 8px;">✨ Voted #1 Best Tech Campus Experience</span>
+            <h1 class="hero-headline">
+              Engineered for <span class="highlight-gradient">Innovators.</span><br>
+              Built for Humans.
+            </h1>
+            <p class="hero-description">
+              Welcome to <strong>Bindhu Institute of Technology (BIT)</strong>. Across our 4 vibrant tech campuses in India, students don't just memorize formulas—they build autonomous rovers, file real patents, and launch startups with global tech leaders.
+            </p>
+
+            <!-- Location Selector Box (Core Requirement) -->
+            <div class="location-selector-wrap">
+              <div class="selector-header-row">
+                <span class="selector-label">📍 Choose Your Campus Destination:</span>
+                <span class="hand-sticker" style="color: var(--accent-emerald); font-size: 1.15rem;">Click city to switch!</span>
+              </div>
+              <div class="campus-tabs" role="tablist" aria-label="BIT Campus Locations">
+                <button class="campus-tab-btn active" role="tab" aria-selected="true" data-campus-target="bengaluru" id="tab-bengaluru">
+                  <div class="tab-top-row">
+                    <span class="tab-city">Bengaluru</span>
+                    <span class="tab-status-dot"></span>
+                  </div>
+                  <span class="tab-role">AI & Robotics Flagship</span>
+                </button>
+                <button class="campus-tab-btn" role="tab" aria-selected="false" data-campus-target="hyderabad" id="tab-hyderabad">
+                  <div class="tab-top-row">
+                    <span class="tab-city">Hyderabad</span>
+                    <span class="tab-status-dot"></span>
+                  </div>
+                  <span class="tab-role">Cloud & FinTech Hub</span>
+                </button>
+                <button class="campus-tab-btn" role="tab" aria-selected="false" data-campus-target="chennai" id="tab-chennai">
+                  <div class="tab-top-row">
+                    <span class="tab-city">Chennai</span>
+                    <span class="tab-status-dot"></span>
+                  </div>
+                  <span class="tab-role">EV & DeepTech Coast</span>
+                </button>
+                <button class="campus-tab-btn" role="tab" aria-selected="false" data-campus-target="pune" id="tab-pune">
+                  <div class="tab-top-row">
+                    <span class="tab-city">Pune</span>
+                    <span class="tab-status-dot"></span>
+                  </div>
+                  <span class="tab-role">Mechatronics Hills</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-cta-group">
+              <button class="btn-primary btn-open-tour-modal" id="btn-hero-visit">
+                <span>📅 Schedule Campus Walk</span>
+              </button>
+              <a href="#ask-bit-section" class="btn-secondary" id="btn-hero-ask-bit">
+                <span>💬 Talk with Priya (Student Ambassador)</span>
+              </a>
+              <a href="#scholarship-section" class="btn-secondary" id="btn-hero-scholarship">
+                <span>💰 Fee Calculator</span>
+              </a>
+            </div>
+
+            <!-- Live Animated Campus Stats -->
+            <div class="hero-stats-strip">
+              <div class="stat-item">
+                <span class="stat-number" id="stat-avg-package">14.8 LPA</span>
+                <span class="stat-label">Average CTC</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="stat-high-package" style="color: #10B981;">54.2 LPA</span>
+                <span class="stat-label">Highest Package</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="stat-placement-rate">99.1%</span>
+                <span class="stat-label">Placement Ratio</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number" id="stat-active-clubs">48 Clubs</span>
+                <span class="stat-label">Active Student Clubs</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Dynamic Campus Visual Card -->
+          <div class="hero-media-card" id="hero-dynamic-card">
+            <img src="assets/campus-bengaluru.jpg" alt="BIT Campus Panoramic Grounds" class="hero-main-img" id="campus-hero-visual" />
+            <div class="media-floating-badge" id="campus-weather-indicator">
+              🌤️ 24°C Breezy & Sunny
+            </div>
+            <div class="media-bottom-glass">
+              <h3 class="media-title" id="active-campus-title">Bengaluru Tech Park Campus</h3>
+              <p class="media-subtitle" id="active-campus-tagline">Electronic City Phase 1 • Artificial Intelligence & Quantum Computing Hub</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Live Campus Notice Board & Student Pulse
+         ========================================================================== -->
+    <section class="section" style="padding-top: 20px; padding-bottom: 40px;">
+      <div class="container">
+        <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-bottom: 20px;">
+          <div>
+            <span class="section-tag">Campus News & Noticeboard</span>
+            <h3 style="font-size: 1.6rem; font-weight: 900;">Live Campus Pulse Across BIT</h3>
+          </div>
+          <span class="hand-sticker" style="color: var(--secondary);">📌 Real student updates & placement news</span>
+        </div>
+
+        <div class="notice-board-grid" id="notice-board-cards">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Campus Profile & Interactive Virtual Spaces Showcase
+         ========================================================================== -->
+    <section class="section" id="campus-showcase-panel">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Campus Immersion</span>
+          <h2 class="section-title">One Institution. Four Thriving Tech Hubs.</h2>
+          <p class="section-desc">
+            Each BIT campus features distinct world-class facilities, specialized industry partnerships, and dedicated research clusters. Switch locations to explore their signature laboratories.
+          </p>
+        </div>
+
+        <!-- Campus Profile Card -->
+        <article class="campus-profile-card">
+          <div class="profile-top-row">
+            <div class="profile-title-group">
+              <span class="hand-sticker">Signature Specializations</span>
+              <div class="specialty-pill-list" id="campus-specialties-tags">
+                <!-- Injected via JavaScript -->
+              </div>
+            </div>
+            <div class="profile-quick-meta">
+              <span class="meta-badge" id="campus-signature-lab-badge">🔬 Flagship Research Hub</span>
+              <button class="btn-secondary btn-open-tour-modal" style="padding: 8px 18px; font-size: 0.86rem;">
+                🚶 Book Free Guided Tour
+              </button>
+            </div>
+          </div>
+
+          <!-- Dean & Location Split Box -->
+          <div class="profile-details-grid">
+            <div class="dean-spotlight-box">
+              <span class="hand-sticker" style="color: var(--primary);">Message from Campus Leadership</span>
+              <p class="dean-quote" id="dean-quote">
+                “At Bengaluru BIT, our students don't just study neural networks; they build and deploy production AI models powering real-world tech.”
+              </p>
+              <div class="dean-author">
+                <span class="dean-name" id="dean-name">Dr. Ananya Murthy</span>
+                <span class="dean-title" id="dean-title">Campus Dean & Professor of Machine Learning</span>
+                <span class="dean-creds" id="dean-credentials">Ph.D. Stanford University, Ex-Google Brain</span>
+              </div>
+            </div>
+
+            <div class="location-reach-box">
+              <div class="reach-row">
+                <span class="reach-label">📍 Campus Address</span>
+                <p class="reach-val" id="campus-address-text">BIT Innovation Corridor, Hosur Road, Electronic City Phase 1, Bengaluru</p>
+              </div>
+              <div class="reach-row">
+                <span class="reach-label">🚆 Public Transit & Metro</span>
+                <p class="reach-val" id="campus-metro-text">5 mins to Electronic City Metro (Yellow Line)</p>
+              </div>
+              <div class="reach-row">
+                <span class="reach-label">📞 Admissions Hotline & Inquiries</span>
+                <p class="reach-val">
+                  <a href="tel:+918028524000" id="campus-phone-link" style="color: var(--primary); font-weight: 700;">+91 80 2852 4000</a> • 
+                  <a href="mailto:admissions.blr@bit.edu.in" id="campus-email-link" style="color: var(--text-muted);">admissions.blr@bit.edu.in</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Virtual Spaces Gallery -->
+          <div style="margin-top: 36px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+              <h3 style="font-size: 1.35rem; font-weight: 800;">Interactive Virtual Spaces & Labs</h3>
+              <span style="font-size: 0.85rem; color: var(--text-muted);">Click any card to inspect in 360°</span>
+            </div>
+            <div class="tour-grid" id="virtual-tour-cards">
+              <!-- Rendered via JavaScript -->
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Day in the Life of a BIT Student (Human Journey)
+         ========================================================================== -->
+    <section class="section" style="background: linear-gradient(180deg, transparent, rgba(79, 70, 229, 0.03), transparent);">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Student Lifestyle</span>
+          <h2 class="section-title">A Day in the Life at BIT</h2>
+          <p class="section-desc">
+            What is everyday life actually like? From morning filter coffee to late-night robotics test runs, here is the authentic student routine.
+          </p>
+        </div>
+
+        <div class="day-timeline-wrap" id="day-timeline-cards">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Ask BIT — Student Ambassador & Admissions Counselor (Core Requirement)
+         ========================================================================== -->
+    <section class="section ask-bit-section" id="ask-bit-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Peer-to-Peer Helpdesk</span>
+          <h2 class="section-title">Ask Anything About BIT. Get Real Answers.</h2>
+          <p class="section-desc">
+            No corporate jargon. Chat directly with <strong>Priya Sharma</strong> (Final Year CSE-AI & Chief Student Ambassador) about cutoffs, placements, mess food, or campus transfers.
+          </p>
+        </div>
+
+        <!-- Chat Studio Container -->
+        <div class="chat-studio-container">
+          <!-- Sidebar: Counselor Identity -->
+          <aside class="chat-info-sidebar">
+            <div>
+              <div class="counselor-avatar-hero">
+                <img src="assets/counselor-priya.jpg" alt="Priya Sharma - Senior Student Ambassador" />
+              </div>
+              <h3 class="counselor-name">Priya Sharma</h3>
+              <p class="counselor-badge">🎓 Senior Student Ambassador & Admissions Guide</p>
+              <p class="counselor-bio">
+                “Hey! I'm in my final year at BIT studying AI. I've stayed in hostels, eaten at the canteens, built hackathon projects, and interviewed with tech giants. Ask me literally anything!”
+              </p>
+
+              <div style="margin: 20px 0; border-top: 1px dashed var(--border-subtle); padding-top: 14px;">
+                <span style="font-size: 0.78rem; text-transform: uppercase; font-weight: 800; color: var(--text-muted); letter-spacing: 0.05em;">Student Desk Availability:</span>
+                <p style="font-size: 0.88rem; font-weight: 700; color: #10B981; margin-top: 4px;">🟢 Live & Ready to Chat</p>
+                <p style="font-size: 0.82rem; color: var(--text-light);">Admissions Toll-Free: 1800-425-BINDHU</p>
+              </div>
+            </div>
+
+            <div>
+              <span class="hand-sticker" style="color: var(--primary); font-size: 1.15rem; margin-bottom: 8px;">Popular Questions:</span>
+              <div style="display: flex; flex-direction: column; gap: 8px;">
+                <button class="chip-btn" style="text-align: left;" onclick="window.sendPresetQuestion('What is BIT highest placement package?')">
+                  💼 Highest Placement Package?
+                </button>
+                <button class="chip-btn" style="text-align: left;" onclick="window.sendPresetQuestion('How to apply for 100% scholarship?')">
+                  🎓 100% Scholarship Eligibility?
+                </button>
+                <button class="chip-btn" style="text-align: left;" onclick="window.sendPresetQuestion('What are hostel rooms and food like?')">
+                  🍲 Hostel Rooms & Food Menu?
+                </button>
+                <button class="chip-btn" style="text-align: left;" onclick="window.sendPresetQuestion('Which campus is best for Computer Science?')">
+                  💻 Best Campus for Computer Science?
+                </button>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Main Interactive Chat Window -->
+          <div class="chat-window">
+            <div class="chat-messages-scroll" id="inpage-chat-messages" role="log" aria-live="polite">
+              <!-- Initial Welcome Message injected via app.js -->
+            </div>
+
+            <div class="chat-input-bar">
+              <input 
+                type="text" 
+                id="inpage-chat-input" 
+                class="chat-input-field" 
+                placeholder="Ask Priya anything... (e.g. 'Can I transfer from Hyderabad to Bengaluru campus?')"
+                aria-label="Ask a question about BIT"
+                autocomplete="off"
+              />
+              <button class="chat-send-btn" id="inpage-chat-send" aria-label="Send Question" title="Send Question">
+                <span>➔</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Academics & Degree Navigator
+         ========================================================================== -->
+    <section class="section" id="programs-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Future-Ready Curricula</span>
+          <h2 class="section-title">Explore Undergraduate Degrees</h2>
+          <p class="section-desc">
+            Co-designed with engineers at Google, NVIDIA, and Tesla. Every degree combines deep theoretical foundations with industry-sponsored capstones and real-world deployment.
+          </p>
+        </div>
+
+        <div class="program-filter-bar">
+          <button class="filter-chip active" data-program-filter="all">All Disciplines</button>
+          <button class="filter-chip" data-program-filter="Computer & AI">Computer & AI</button>
+          <button class="filter-chip" data-program-filter="Emerging Tech & Space">Robotics, Space & Quantum</button>
+          <button class="filter-chip" data-program-filter="Electronics & Core">EV Mobility & Electronics</button>
+        </div>
+
+        <div class="programs-grid" id="programs-grid">
+          <!-- Rendered via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Interactive Scholarship & Fee Calculator
+         ========================================================================== -->
+    <section class="section" id="scholarship-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Transparency in Education</span>
+          <h2 class="section-title">Tuition & Scholarship Calculator</h2>
+          <p class="section-desc">
+            BIT believes merit and passion should never be held back by financial constraints. Over ₹12 Crores in annual tuition waivers are awarded every academic year.
+          </p>
+        </div>
+
+        <div class="calculator-wrap">
+          <!-- Inputs Column -->
+          <div class="calc-inputs-column">
+            <div class="calc-field-group">
+              <div class="calc-label-row">
+                <label for="score-slider" class="calc-label">Your Class 12th / Board Exam Score:</label>
+                <span class="calc-val-pill" id="score-value-display">92%</span>
+              </div>
+              <input type="range" id="score-slider" class="styled-range" min="60" max="100" value="92" step="1" />
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-light);">
+                <span>60% (Minimum)</span>
+                <span>80%</span>
+                <span>90%</span>
+                <span>100% (Full Waiver)</span>
+              </div>
+            </div>
+
+            <div class="calc-field-group">
+              <label for="rank-select" class="calc-label">Entrance Exam Performance (JEE / BSAT / State CET):</label>
+              <select id="rank-select" class="styled-select">
+                <option value="rank-2500">Top 2,500 Rank (Founder's Fellowship Tier)</option>
+                <option value="rank-8000" selected>Top 8,000 Rank (Dean's Excellence Tier)</option>
+                <option value="rank-15000">Top 15,000 Rank (Innovator Award Tier)</option>
+                <option value="rank-25000">Top 25,000 Rank (Future Engineer Tier)</option>
+                <option value="none">Not appeared yet / Merit Board based</option>
+              </select>
+            </div>
+
+            <div class="calc-field-group">
+              <span class="calc-label">Hostel & Living Preference:</span>
+              <div class="calc-radio-group">
+                <label class="calc-radio-card">
+                  <input type="radio" name="calc-hostel" value="none" />
+                  <span>Day Scholar<br><small style="font-weight: 400; opacity: 0.8;">Own Stay</small></span>
+                </label>
+                <label class="calc-radio-card">
+                  <input type="radio" name="calc-hostel" value="non-ac" />
+                  <span>Non-AC Room<br><small style="font-weight: 400; opacity: 0.8;">+ ₹1.55L /yr</small></span>
+                </label>
+                <label class="calc-radio-card">
+                  <input type="radio" name="calc-hostel" value="ac" checked />
+                  <span>Deluxe AC<br><small style="font-weight: 400; opacity: 0.8;">+ ₹1.95L /yr</small></span>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Results Panel -->
+          <div class="calc-results-column">
+            <div>
+              <span class="result-badge">Guaranteed Merit Scholarship</span>
+              <h3 class="result-tier-title" id="calc-tier-name">Dean's Merit Excellence Scholarship</h3>
+              <div class="result-waiver-hero" id="calc-waiver-pct">75%</div>
+              <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">Tuition Fee Discount applied for all 4 years of study.</p>
+            </div>
+
+            <div class="calc-breakdown-table">
+              <div class="breakdown-row">
+                <span>Standard Base Tuition:</span>
+                <span>₹2,80,000/yr</span>
+              </div>
+              <div class="breakdown-row">
+                <span>Net Tuition After Scholarship:</span>
+                <span id="calc-net-tuition" style="font-weight: 700; color: #10B981;">₹70,000/yr</span>
+              </div>
+              <div class="breakdown-row breakdown-total">
+                <span>Total Payable (incl. Accommodation):</span>
+                <span id="calc-total-payable">₹2,65,000/yr</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="savings-highlight" id="calc-annual-savings">
+                You Save ₹6,30,000 over 4 years! 🎉
+              </div>
+              <button class="btn-primary" id="btn-gen-scholarship-cert" style="width: 100%;">
+                <span>📜 Claim Official Scholarship Letter</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         Student Life, Culture & Live Reaction Physics
+         ========================================================================== -->
+    <section class="section" id="student-life-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Human Spirit & Energy</span>
+          <h2 class="section-title">Life at BIT is Vibrant, Loud & Creative</h2>
+          <p class="section-desc">
+            From 36-hour hackathons with free pizza to sunset open-mic acoustic sessions and formula race-car builds, your college years here will be unforgettable.
+          </p>
+        </div>
+
+        <div class="polaroid-grid">
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Students coding and laughing" class="polaroid-img" />
+            <p class="polaroid-caption">“All-night HackBIT sprint at Bengaluru Maker Studio! We won 1st prize for our drone swarm prototype! 🚀”</p>
+            <span class="polaroid-author">— Priya & Rohan, CSE-AI Batch of '27</span>
+          </div>
+
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Campus Fest celebration" class="polaroid-img" />
+            <p class="polaroid-caption">“Dhwani Fest in Pune hills amphitheater! 15,000 people singing under neon skies. Best weekend of my life! 🎸”</p>
+            <span class="polaroid-author">— Tanvi Sharma, Formula Racing Club</span>
+          </div>
+
+          <div class="polaroid-card">
+            <div class="polaroid-tape"></div>
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Students in discussion" class="polaroid-img" />
+            <p class="polaroid-caption">“Morning filter coffee at Cafe BIT Chennai overlooking the sea, prepping for our Amazon interview! ☕”</p>
+            <span class="polaroid-author">— Karthik S., Placed at Amazon AWS</span>
+          </div>
+        </div>
+
+        <!-- Live Campus Cheers / Interactive Reactions -->
+        <div class="reactions-strip">
+          <span class="reactions-title">Send Live Cheers to BIT Students:</span>
+          <button class="btn-reaction" data-reaction="cheer" data-emoji="🖐️" id="btn-cheer">
+            <span>🖐️ High-Five</span>
+            <span class="reaction-count">1420</span>
+          </button>
+          <button class="btn-reaction" data-reaction="love" data-emoji="❤️" id="btn-love">
+            <span>❤️ Love It</span>
+            <span class="reaction-count">2890</span>
+          </button>
+          <button class="btn-reaction" data-reaction="inspire" data-emoji="🚀" id="btn-inspire">
+            <span>🚀 Inspiring</span>
+            <span class="reaction-count">980</span>
+          </button>
+          <button class="btn-reaction" data-reaction="fire" data-emoji="🔥" id="btn-fire">
+            <span>🔥 On Fire</span>
+            <span class="reaction-count">1650</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       Footer & All Campus Addresses
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 40px;">
+        <h3 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 8px;">Bindhu Institute of Technology</h3>
+        <p style="color: #94A3B8; font-size: 0.95rem;">NAAC A++ Accredited • AICTE Approved • ABET Equivalent Tier-1 Autonomous Institution</p>
+      </div>
+
+      <div class="footer-campus-grid">
+        <div class="footer-campus-card">
+          <h4 class="f-city-title">Bengaluru Campus</h4>
+          <p class="f-city-addr">BIT Innovation Corridor, Hosur Road, Electronic City Phase 1, Bengaluru 560100</p>
+          <div class="f-city-contact">
+            <span>📞 +91 80 2852 4000</span>
+            <span>✉️ blr@bit.edu.in</span>
+          </div>
+        </div>
+
+        <div class="footer-campus-card">
+          <h4 class="f-city-title">Hyderabad Campus</h4>
+          <p class="f-city-addr">Knowledge City, Financial District, Gachibowli, Hyderabad 500032</p>
+          <div class="f-city-contact">
+            <span>📞 +91 40 6712 5000</span>
+            <span>✉️ hyd@bit.edu.in</span>
+          </div>
+        </div>
+
+        <div class="footer-campus-card">
+          <h4 class="f-city-title">Chennai Campus</h4>
+          <p class="f-city-addr">IT Expressway OMR, Navalur, Chennai 603103</p>
+          <div class="f-city-contact">
+            <span>📞 +91 44 4749 3000</span>
+            <span>✉️ chn@bit.edu.in</span>
+          </div>
+        </div>
+
+        <div class="footer-campus-card">
+          <h4 class="f-city-title">Pune Campus</h4>
+          <p class="f-city-addr">Hinjewadi Tech Park Phase 3, Taluka Mulshi, Pune 411057</p>
+          <div class="f-city-contact">
+            <span>📞 +91 20 6791 2000</span>
+            <span>✉️ pune@bit.edu.in</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 Bindhu Institute of Technology (BIT). All Rights Reserved.</span>
+        <span>Admissions Toll-Free Helpline: 1800-425-BINDHU (2463)</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Floating Student Counselor Widget (Priya Sharma)
+       ========================================================================== -->
+  <aside class="floating-chat-container" aria-label="Floating Student Counselor">
+    <div class="floating-chat-window" id="floating-chat-window">
+      <div class="floating-chat-header">
+        <div class="f-head-info">
+          <img src="assets/counselor-priya.jpg" alt="Priya Sharma" class="f-avatar-mini" />
+          <div>
+            <h4 class="f-head-title">Priya Sharma • BIT Ambassador</h4>
+            <span class="f-head-sub">🟢 Online • Instant Answers</span>
+          </div>
+        </div>
+        <button class="f-close-btn" id="floating-chat-close" aria-label="Close Assistant">✕</button>
+      </div>
+
+      <div class="chat-messages-scroll" id="floating-chat-messages">
+        <!-- Dynamically populated -->
+      </div>
+
+      <div class="chat-input-bar">
+        <input 
+          type="text" 
+          id="floating-chat-input" 
+          class="chat-input-field" 
+          placeholder="Ask Priya about fees, hostels, cutoffs..."
+          aria-label="Floating chat question input"
+        />
+        <button class="chat-send-btn" id="floating-chat-send" aria-label="Send query">➔</button>
+      </div>
+    </div>
+
+    <!-- Toggle Action Button with Priya's Photo -->
+    <button class="floating-chat-btn" id="floating-chat-toggle" aria-label="Talk to Student Ambassador" title="Chat with Priya (BIT Student Ambassador)">
+      <img src="assets/counselor-priya.jpg" alt="Priya Sharma" class="floating-counselor-avatar" />
+      <span class="floating-badge-alert" id="floating-chat-badge"></span>
+    </button>
+  </aside>
+
+  <!-- ==========================================================================
+       Native Modals & Interactive Dialogs
+       ========================================================================== -->
+
+  <!-- Modal 1: Campus Visit Booking -->
+  <dialog id="tour-booking-modal" aria-labelledby="modal-tour-title">
+    <div class="dialog-content">
+      <button class="dialog-close-btn" data-close-dialog="tour-booking-modal" aria-label="Close dialog">✕</button>
+      <h3 id="modal-tour-title" style="font-size: 1.8rem; font-weight: 900; margin-bottom: 8px;">Schedule an In-Person Visit</h3>
+      <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px;">
+        Tour our robotics arenas, dorms, and grab a coffee with admissions counselors. Free digital visitor pass generated immediately!
+      </p>
+
+      <form id="tour-booking-form" style="display: flex; flex-direction: column; gap: 16px;">
+        <div>
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Full Name:</label>
+          <input type="text" id="visitor-name" required placeholder="e.g. Bindhu Sharma" class="styled-select" style="width: 100%;" />
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div>
+            <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Email Address:</label>
+            <input type="email" id="visitor-email" required placeholder="bindhu@example.com" class="styled-select" style="width: 100%;" />
+          </div>
+          <div>
+            <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Phone Number:</label>
+            <input type="tel" id="visitor-phone" required placeholder="+91 98450 12345" class="styled-select" style="width: 100%;" />
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div>
+            <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Target Campus:</label>
+            <select id="visitor-campus" class="styled-select" style="width: 100%;">
+              <option value="bengaluru">Bengaluru Campus</option>
+              <option value="hyderabad">Hyderabad Campus</option>
+              <option value="chennai">Chennai Campus</option>
+              <option value="pune">Pune Campus</option>
+            </select>
+          </div>
+          <div>
+            <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Preferred Date:</label>
+            <input type="date" id="visitor-date" required class="styled-select" style="width: 100%;" value="2026-11-15" />
+          </div>
+        </div>
+
+        <div>
+          <label style="font-size: 0.85rem; font-weight: 700; display: block; margin-bottom: 6px;">Time Slot:</label>
+          <select id="visitor-slot" class="styled-select" style="width: 100%;">
+            <option value="Morning 10:00 AM">Morning 10:00 AM (Includes Lab Tour & Student Q&A)</option>
+            <option value="Afternoon 2:30 PM">Afternoon 2:30 PM (Includes Sports Complex & Cafe Chat)</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary" style="margin-top: 10px; width: 100%;">
+          <span>Generate Digital Visitor Pass</span> ➔
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Modal 2: Generated Digital Visitor Pass -->
+  <dialog id="tour-pass-modal" aria-labelledby="modal-pass-title">
+    <div class="dialog-content">
+      <button class="dialog-close-btn" data-close-dialog="tour-pass-modal" aria-label="Close dialog">✕</button>
+      <span class="hand-sticker" style="color: #10B981; font-size: 1.3rem;">🎉 You're All Set!</span>
+      <h3 id="modal-pass-title" style="font-size: 1.6rem; font-weight: 900; margin-top: 4px;">Your Official Campus Visitor Pass</h3>
+      
+      <div class="visitor-pass-ticket">
+        <div class="ticket-header">
+          <div>
+            <strong style="font-size: 1.1rem; letter-spacing: 1px;">BINDHU INSTITUTE OF TECHNOLOGY</strong>
+            <p style="font-size: 0.75rem; opacity: 0.8;">OFFICIAL GUEST ENTRY PERMIT</p>
+          </div>
+          <span style="font-size: 1.4rem;">🏛️</span>
+        </div>
+
+        <div class="ticket-grid">
+          <div class="ticket-field">
+            <label>Visitor Name</label>
+            <p id="pass-visitor-name">Bindhu Sharma</p>
+          </div>
+          <div class="ticket-field">
+            <label>Pass ID</label>
+            <p id="pass-id-display">BIT-PASS-849201</p>
+          </div>
+          <div class="ticket-field">
+            <label>Designated Campus</label>
+            <p id="pass-campus-title">Bengaluru Tech Park Campus</p>
+          </div>
+          <div class="ticket-field">
+            <label>Visit Slot</label>
+            <p id="pass-slot-time">2026-11-15 • Morning 10:00 AM</p>
+          </div>
+        </div>
+
+        <div class="ticket-barcode">
+          <span>||||| | |||| ||||| ||| |||||||</span>
+          <span style="font-size: 0.78rem;">SHOW AT MAIN SECURITY GATE</span>
+        </div>
+      </div>
+
+      <p id="pass-address" style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">
+        BIT Innovation Corridor, Hosur Road, Electronic City Phase 1, Bengaluru
+      </p>
+
+      <div style="display: flex; gap: 12px;">
+        <button class="btn-primary" onclick="window.print()" style="flex: 1;">
+          <span>🖨️ Print / Save Pass</span>
+        </button>
+        <button class="btn-secondary" data-close-dialog="tour-pass-modal">
+          Done
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 3: Course Curriculum & Lab Details -->
+  <dialog id="course-details-modal" aria-labelledby="modal-course-title">
+    <div class="dialog-content">
+      <button class="dialog-close-btn" data-close-dialog="course-details-modal" aria-label="Close dialog">✕</button>
+      <span class="meta-badge" id="modal-course-category" style="margin-bottom: 8px;">Computer & AI</span>
+      <h3 id="modal-course-title" style="font-size: 1.7rem; font-weight: 900; margin: 6px 0 12px;">B.Tech Curriculum</h3>
+      <p id="modal-course-desc" style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 20px;"></p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; background: var(--bg-surface-elevated); padding: 14px; border-radius: var(--radius-md);">
+        <div>
+          <span style="font-size: 0.72rem; color: var(--text-light); text-transform: uppercase;">Average CTC</span>
+          <p id="modal-course-avg" style="font-weight: 800; font-size: 1.1rem; color: var(--primary);"></p>
+        </div>
+        <div>
+          <span style="font-size: 0.72rem; color: var(--text-light); text-transform: uppercase;">Highest Offer</span>
+          <p id="modal-course-high" style="font-weight: 800; font-size: 1.1rem; color: #10B981;"></p>
+        </div>
+        <div>
+          <span style="font-size: 0.72rem; color: var(--text-light); text-transform: uppercase;">Campus Intake</span>
+          <p id="modal-course-seats" style="font-weight: 800; font-size: 1.1rem;"></p>
+        </div>
+      </div>
+
+      <h4 style="font-size: 1.05rem; font-weight: 800; margin-bottom: 12px;">Core Industry Specializations:</h4>
+      <div id="modal-course-subjects" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px;">
+        <!-- Injected dynamically -->
+      </div>
+
+      <button class="btn-primary" onclick="window.sendPresetQuestion('How can I apply for ' + document.getElementById('modal-course-title').textContent); document.getElementById('course-details-modal').close();" style="width: 100%;">
+        <span>Ask Admissions About This Program</span> ➔
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Modal 4: Digital Scholarship Award Certificate -->
+  <dialog id="scholarship-cert-modal" aria-labelledby="modal-cert-title">
+    <div class="dialog-content">
+      <button class="dialog-close-btn" data-close-dialog="scholarship-cert-modal" aria-label="Close dialog">✕</button>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <img src="assets/bit-logo.jpg" alt="BIT Logo" style="width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 10px;" />
+        <h3 id="modal-cert-title" style="font-size: 1.6rem; font-weight: 900;">Merit Scholarship Assessment</h3>
+        <p style="color: var(--text-muted); font-size: 0.88rem;">Office of Admissions • Bindhu Institute of Technology</p>
+      </div>
+
+      <div style="background: linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(16, 185, 129, 0.08)); border: 2px solid var(--border-glow); border-radius: var(--radius-lg); padding: 24px; text-align: center; margin-bottom: 20px;">
+        <span class="hand-sticker" style="color: #10B981; font-size: 1.4rem;">Official Pre-Approval</span>
+        <h4 id="cert-tier-name" style="font-size: 1.4rem; font-weight: 900; margin: 8px 0;">Dean's Merit Excellence Scholarship</h4>
+        <p id="cert-waiver-display" style="font-size: 2rem; font-weight: 900; color: #10B981; margin: 10px 0;">75% Tuition Waiver</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">
+          Based on verified score benchmark of <strong id="cert-student-score">92% Aggregate</strong> for enrollment at <strong id="cert-campus-name">Bengaluru Tech Park Campus</strong>.
+        </p>
+        <p style="margin-top: 10px; font-weight: 800; color: var(--primary);">
+          Total 4-Year Tuition Savings: <span id="cert-savings-total">₹6,30,000</span>
+        </p>
+      </div>
+
+      <div style="display: flex; gap: 12px;">
+        <button class="btn-primary" onclick="window.print()" style="flex: 1;">
+          <span>🖨️ Download Certificate PDF</span>
+        </button>
+        <button class="btn-secondary" data-close-dialog="scholarship-cert-modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 5: 360 Photo Preview -->
+  <dialog id="image-preview-modal" style="max-width: 880px;">
+    <div class="dialog-content" style="padding: 18px;">
+      <button class="dialog-close-btn" data-close-dialog="image-preview-modal" aria-label="Close dialog">✕</button>
+      <div style="border-radius: var(--radius-lg); overflow: hidden; max-height: 520px; margin-bottom: 14px;">
+        <img id="preview-img-tag" src="" alt="Virtual View" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+      <h3 id="preview-img-title" style="font-size: 1.4rem; font-weight: 800; margin-bottom: 4px;"></h3>
+      <p id="preview-img-desc" style="color: var(--text-muted); font-size: 0.92rem;"></p>
+    </div>
+  </dialog>
+
+  <!-- Core Scripts -->
+  <script src="js/campus-data.js"></script>
+  <script src="js/chatbot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
