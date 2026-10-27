@@ -50,7 +50,7 @@ node server.js
 
 Open your browser at:
 ```
-http://localhost:3000
+https://bindhuchitty06-bot.github.io/collage-frontend-/
 ```
 
 ---
